@@ -22,6 +22,8 @@ def split_excel():
 
     # Save each dataframe as a separate Excel file
     for value, dataframe in dataframes.items():
+        row_count = len(dataframe)
+        print(f"{value} : {row_count} assets")
         dataframe.to_excel(f'{output_folder}/PCI_Assets_{value}.xlsx', index=False)
     
     print(f"Data exported successfully to {output_folder}")

@@ -22,6 +22,13 @@ def cross_reference_excel(f1, f2, search):
 
     print(f"Data exported successfully to matched.xlsx")
 
+    # To find the non matching rows
+    non_matched_df = df1[~df1['IP Address'].isin(df2['IP Address'])]
+    non_matched_df.to_excel('non_matched.xlsx', index=False)
+    print(f"Data exported successfully to non_matched.xlsx")
+    # print(non_matched_df)
+
+
     
 
 f1 = r'vulnerabilities-verified.csv'
